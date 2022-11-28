@@ -1,0 +1,22 @@
+<div class="container my-5">
+    <div class="col border rounded border-secondary">
+        <div class="container-fluid d-flex justify-content-between">
+            <h5 class="p-3 pb-0 align-self-end mb-0" style="height:fit-content;">All Notes</h5>
+            <app-button class="p-4 pb-0" text="Add" color="green" bgcolor="white" (btnClick)="toggleAddNotepad()"></app-button>
+        </div>
+        <hr class='mx-4'/>
+        <div class="container-fluid d-flex flex-column">
+                <div *ngFor="let notes of Notepads" class="pb-1 pt-1 d-flex container-fluid">
+                    <div class="col">
+                        <h4>{{notes.title}}</h4>
+                        <p><b>{{notes.date}} </b><i>{{notes.time}}</i></p>
+                    </div>
+                    <div class="col justify-content-end align-self-center d-flex">
+                        <app-button class='mx-1' text="View" color="green" bgcolor="white" (btnClick)="viewNotepad(notes.id)"></app-button>
+                        <app-button class='mx-1' text="Edit" color="orange" bgcolor="white" (btnClick)="editNotepad(notes.id)"></app-button>
+                        <app-button class='mx-1' text="Delete" color="red" bgcolor="white" (btnClick)="deleteNotepad(notes.id)"></app-button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

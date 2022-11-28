@@ -1,0 +1,24 @@
+<div class="container my-5">
+    <div class="col border rounded border-secondary">
+        <div class="container-fluid d-flex justify-content-between">
+            <h5 class="p-3 pb-0 align-self-end mb-0" style="height:fit-content;">Notepad</h5>
+            <app-button class="p-4 pb-0" text="Add Another" color="green" bgcolor="white" (btnClick)="toggleAddNotepad()"></app-button>
+        </div>
+        <hr class='mx-4'/>
+        <div class="container-fluid d-flex flex-column">
+            <div class="pb-1 pt-1 d-flex container-fluid">
+                <div class="col">
+                    <h4>{{Notepads.title}}</h4>
+                    <p><b>{{Notepads.date}} </b><i>{{Notepads.time}}</i></p>
+                    <p><b>{{Notepads.author}}</b></p>
+                    <p>{{Notepads.body}}</p>
+                </div>
+            </div>
+            <div class="d-flex container-fluid pt-1 pb-3">
+                <app-button class='mx-1' text="Edit" color="orange" bgcolor="white" (btnClick)="editNotepad(Notepads.id)"></app-button>
+                <app-button class='mx-1' text="Delete" color="red" bgcolor="white" (btnClick)="deleteNotepad(Notepads.id)"></app-button>
+            </div>
+        </div>
+
+    </div>
+</div>
